@@ -10,7 +10,7 @@ module.exports = {
       axios.get(`${MAIN_URL}/articlesearch.json?q=${q}&sort=${sort}&api-key=${API_KEY}`)
       .then(res => {
         console.log(res);
-        resolve(res.data.response.docs.find(o => o.))
+        resolve(res.data.response.docs)
       })
       .catch(err => {
         console.log(err);
