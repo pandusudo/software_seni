@@ -25,11 +25,19 @@ module.exports = {
     const {id} = req.params
 
     articlesModel.getArticle(id).then(result => {
-      res.json({
-        status:200,
-        data: result,
-        message: 'get article detail success'
-      })
+      console.log(result);
+      if (typeof result !== 'object') {
+        res.json({
+          status: 404,
+          message: 'article not found'
+        })
+      } else {
+        res.json({
+          status:200,
+          data: result,
+          message: 'get article detail success'
+        })
+      }
     }).catch(err => {
       res.status(500).json({
         status: 500,

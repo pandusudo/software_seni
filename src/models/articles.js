@@ -22,7 +22,7 @@ module.exports = {
     return new Promise(function(resolve, reject) {
       axios.get(`${MAIN_URL}/articlesearch.json?q=${''}&sort=${'newest'}&api-key=${API_KEY}`)
       .then(res => {
-        console.log(res);
+        console.log(res.data.response.docs.find(o => o._id.split('/')[o._id.split('/').length - 1] == id));
         resolve(res.data.response.docs.find(o => o._id.split('/')[o._id.split('/').length - 1] == id))
       })
       .catch(err => {
