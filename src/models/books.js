@@ -1,12 +1,14 @@
 const axios = require('axios')
 require('dotenv/config')
 
+// const
 const MAIN_URL = process.env.REQUEST_LINK + '/books/v3'
 const API_KEY = process.env.API_KEY
 
 module.exports = {
   searchBooks : (list, date, q) => {
     return new Promise(function(resolve, reject) {
+      // request to url
       axios.get(`${MAIN_URL}/lists/${date}/${list}.json?api-key=${API_KEY}`)
       .then(res => {
         console.log(res.data.results.books);
