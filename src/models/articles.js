@@ -1,7 +1,7 @@
 const axios = require('axios')
 require('dotenv/config')
 
-const MAIN_URL = process.env.REQUEST_LINK
+const MAIN_URL = process.env.REQUEST_LINK + '/search/v2'
 const API_KEY = process.env.API_KEY
 
 module.exports = {

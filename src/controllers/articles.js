@@ -4,7 +4,7 @@ module.exports = {
   searchArticle: (req, res) => {
     let {q, sort} = req.query
 
-    q = typeof name !== 'undefined' ? name : ''
+    q = typeof q !== 'undefined' ? q : ''
     sort = typeof sort !== 'undefined' ? sort : 'newest'
 
     articlesModel.searchArticle(q, sort).then(result => {
